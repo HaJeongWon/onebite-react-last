@@ -10,15 +10,21 @@ import Edit from "./pages/Edit";
 const mokData = [
   {
     id: 1,
-    createDate: new Date().getTime(),
+    createdDate: new Date("2025-01-17").getTime(),
     emotionId: 1,
-    content: "1번 일기 내용용",
+    content: "1번 일기 내용",
   },
   {
     id: 2,
-    createDate: new Date().getTime(),
+    createdDate: new Date("2025-01-16").getTime(),
     emotionId: 2,
-    content: "2번 일기 내용용",
+    content: "2번 일기 내용",
+  },
+  {
+    id: 3,
+    createdDate: new Date("2024-12-16").getTime(),
+    emotionId: 3,
+    content: "3번 일기 내용",
   },
 ];
 
@@ -37,8 +43,8 @@ function reducer(state, action) {
   }
 }
 
-const DiaryStateContext = createContext();
-const DiaryDispatchContext = createContext();
+export const DiaryStateContext = createContext();
+export const DiaryDispatchContext = createContext();
 
 // 1. "/" : 모든 일기를 조회하는 Home 패키지
 // 2. "/new" : 새로운 일기를 작성하는 New 패키지
