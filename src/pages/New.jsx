@@ -11,6 +11,7 @@ const New = () => {
 
   const onSubmit = (input) => {
     onCreate(input.createdDate.getTime(), input.emotionId, input.content);
+    nav(-1, { replace: false });
   };
 
   return (
