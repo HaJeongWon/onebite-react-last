@@ -7,26 +7,7 @@ import Notfound from "./pages/Notfound";
 import { useReducer, useRef, createContext } from "react";
 import Edit from "./pages/Edit";
 
-const mokData = [
-  {
-    id: 1,
-    createdDate: new Date("2025-01-17").getTime(),
-    emotionId: 1,
-    content: "1번 일기 내용",
-  },
-  {
-    id: 2,
-    createdDate: new Date("2025-01-16").getTime(),
-    emotionId: 2,
-    content: "2번 일기 내용",
-  },
-  {
-    id: 3,
-    createdDate: new Date("2024-12-16").getTime(),
-    emotionId: 3,
-    content: "3번 일기 내용",
-  },
-];
+const mokData = [];
 
 function reducer(state, action) {
   switch (action.type) {
@@ -54,13 +35,13 @@ function App() {
   const idRef = useRef(3);
 
   // 새로운 일기 추가
-  const onCreate = (createDate, emotionId, content) => {
+  const onCreate = (createdDate, emotionId, content) => {
     //새로운 일기를 추가하는 기능
     dispatch({
       type: "CREATE",
       data: {
         id: idRef.current,
-        createDate,
+        createdDate,
         emotionId,
         content,
       },
@@ -68,12 +49,12 @@ function App() {
   };
 
   // 기존 일기 수정
-  const onUpdate = (id, createDate, emotionId, content) => {
+  const onUpdate = (id, createdDate, emotionId, content) => {
     dispatch({
       type: "UPDATE",
       data: {
         id,
-        createDate,
+        createdDate,
         emotionId,
         content,
       },
